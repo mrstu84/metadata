@@ -1,2 +1,3 @@
-# metadata
-Meta Data plugin for CakePHP
+# Meta Data Plugin for CakePHP
+
+Meta Data plugin for CakePHP.
