@@ -1,18 +1,10 @@
 {
     "name": "mrstu84/metadata",
-    "verson": "1.0.0",
     "description": "Meta Data plugin for CakePHP",
     "type": "cakephp-plugin",
     "homepage": "https://github.com/mrstu84/metadata",
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/mrstu84/metadata"
-        }
-    ],
     "require": {
-        "cakephp/cakephp": "~2.6",
-        "mrstu84/metadata": "dev-master"
+        "cakephp/cakephp": "~2.6"
     },
     "license": "MIT",
     "authors": [
