@@ -1,24 +1,25 @@
 {
     "name": "mrstu84/metadata",
+    "verson": "1.0.0",
     "description": "Meta Data plugin for CakePHP",
     "type": "cakephp-plugin",
     "homepage": "https://github.com/mrstu84/metadata",
     "repositories": [
         {
-            "url": "https://github.com/mrstu84/metadata.git",
-            "type": "git"
+            "type": "git",
+            "url": "https://github.com/mrstu84/metadata"
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "composer/installers": "*",
-        "mrstu84/metadata": "*"
+        "cakephp/cakephp": "~2.6",
+        "mrstu84/metadata": "dev-master"
     },
     "license": "MIT",
     "authors": [
         {
             "name": "Stewart Doxey",
-            "email": "hello@stewartdoxey.co.uk"
+            "email": "hello@stewartdoxey.co.uk",
+            "role": "Author"
         }
     ],
     "extra": {
