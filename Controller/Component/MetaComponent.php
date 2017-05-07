@@ -20,7 +20,7 @@ App::uses('Component', 'Controller');
  * @subpackage 	metadata.controllers.components
  */
 
-App::uses('ArrayUtil', 'MetaData.Lib');
+App::uses('ArrayUtil', '\Snscripts\ArrayHelper');
 
 App::uses('CakeText', 'Utility');
 
@@ -108,7 +108,17 @@ class MetaComponent extends Component {
  * @return updated array with the meta fields prepended where requested
  */
 	public function prependFormFields($existingArray = array(), $arrayKey = '') {
-		return ArrayUtil::prependElements($existingArray, $arrayKey, $this->metaDataFields);
+		// determine where to add the meta data form fields based on the requested
+		// arrayKey. The meta fields should show before arrayKey
+		$offset = ArrayUtil::getOffsetByKey($existingArray, $arrayKey);
+
+		$existingArrayKeys = array_keys($existingArray);
+
+		if (isset($existingArrayKeys[$offset - 1])) {
+			$arrayKey = $existingArrayKeys[$offset - 1];
+		}
+
+		return ArrayUtil::addAfter($existingArray, $arrayKey, $this->metaDataFields);
 	}
 
 /**
@@ -119,7 +129,7 @@ class MetaComponent extends Component {
  * @return updated array with the meta fields prepended where requested
  */
 	public function appendFormFields($existingArray = array(), $arrayKey = '') {
-		return ArrayUtil::appendElements($existingArray, $arrayKey, $this->metaDataFields);
+		return ArrayUtil::addAfter($existingArray, $arrayKey, $this->metaDataFields);
 	}
 
 }

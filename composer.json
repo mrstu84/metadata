@@ -4,7 +4,8 @@
     "type": "cakephp-plugin",
     "homepage": "https://github.com/mrstu84/metadata",
     "require": {
-        "cakephp/cakephp": "~2.6"
+        "cakephp/cakephp": "~2.6",
+        "snscripts/array-helper": "1.*"
     },
     "license": "MIT",
     "authors": [
