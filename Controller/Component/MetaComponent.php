@@ -61,7 +61,7 @@ class MetaComponent extends Component {
  * @return void
  */
 	public function set($data = array()) {
-		$Model = $this->__controller->{$this->__controller->modelClass};
+		$Model = $this->Controller->{$this->Controller->modelClass};
 
 		// assign the meta title variable, starting with data assigned
 		// directly to MetaData, falling back next to the Model displayField
