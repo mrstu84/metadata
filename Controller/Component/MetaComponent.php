@@ -57,11 +57,17 @@ class MetaComponent extends Component {
 /**
  * Sets the views meta data, if available
  *
+ * @param string $modelAlias Allows model to be manually overridden
  * @param array $data
  * @return void
  */
-	public function set($data = array()) {
+	public function set($data = array(), $modelAlias = null) {
 		$Model = $this->Controller->{$this->Controller->modelClass};
+
+		// if $modelAlias is assign, intansiate and use model
+		if (! empty($modelAlias) && $modelAlias != $Model->alias) {
+			$Model = ClassRegistry::init($modelAlias);
+		}
 
 		// assign the meta title variable, starting with data assigned
 		// directly to MetaData, falling back next to the Model displayField
